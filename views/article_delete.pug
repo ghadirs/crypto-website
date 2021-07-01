@@ -1,0 +1,17 @@
+extends layout
+
+block content 
+
+    h1 #{title}
+    
+    each article in articles 
+
+      #{article.title}
+
+      p Do you really want to delete this Author?
+
+      form(method='POST' action='')
+            div.form-group
+              input#articleid.form-control(type='hidden',name='articleid', required='true', value=article._id )
+
+            button.btn.btn-primary(type='submit') Delete

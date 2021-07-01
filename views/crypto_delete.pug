@@ -1,0 +1,17 @@
+extends layout
+
+block content 
+
+    h1 #{title}
+    
+    each crypto in  cryptos 
+
+      #{crypto.name}
+
+      p Do you really want to delete this Author?
+
+      form(method='POST' action='')
+            div.form-group
+              input#cryptoid.form-control(type='hidden',name='cryptoid', required='true', value=crypto._id )
+
+            button.btn.btn-primary(type='submit') Delete

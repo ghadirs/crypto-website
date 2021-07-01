@@ -1,0 +1,21 @@
+extends layout
+
+block content
+
+    each article in articles
+
+      h1 #{article.title} 
+      
+      p #{article.text}
+      
+      p written by: #{article.author}
+
+      hr
+      p
+        a(href=article.url+'/delete') Delete Author
+      hr
+      p
+        a(href=article.url+'/update') Update Author
+    else
+      p There are no Users.
+

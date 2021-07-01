@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+  h1 Crypto List:
+
+  div(style='margin-left:20px;margin-top:20px')
+  
+    dl
+      each crypto in crypto_list
+        dt
+          a(href=crypto.url) #{crypto.name}
+        dd #{crypto.price}
+
+      else
+        p This genre has no books

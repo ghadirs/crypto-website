@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1 #{title}
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='username') username:
+        input#name.form-control(type='text', placeholder='michealsk, satherunm etc.' name='username' required='true' value=(undefined===user ? '' : user.username))
+
+      label(for='password') password:
+        input#name.form-control(type='password', placeholder='type a password' name='password' required='true' value=(undefined===user ? '' : user.password))
+
+      label(for='email') email:
+        input#name.form-control(type='email', placeholder='your email' name='email' required='true' value=(undefined===user ? '' : user.email))
+
+      label(for='mobile') Mobile:
+        input#name.form-control(type='number', placeholder='your phone number' name='mobile' required='true' value=(undefined===user ? '' : user.mobile))
+
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors
+   ul
+    for error in errors
+     li!= error.msg

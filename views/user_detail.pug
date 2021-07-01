@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1= title
+
+  ul
+    each user in users
+      li
+        p Name: #{user.username}
+      li
+        p Email: #{user.email}
+      li
+        p Mobile: #{user.mobile}
+
+      hr
+      p
+        a(href=user.url+'/delete') Delete User
+      hr
+      p
+        a(href=user.url+'/update') Update User
+
+
+    else
+      p There are no Users.

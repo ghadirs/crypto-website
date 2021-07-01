@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= title
+
+  ul
+    each crypto in cryptos
+      li
+        p Name: #{crypto.name} (#{crypto.price})
+      li
+        | #{crypto.copacity}
+      
+      hr
+      p
+        a(href=crypto.url+'/delete') Delete Crypto
+      hr
+      p
+        a(href=crypto.url+'/update') Update Crypto
+
+    else
+      p There are no Users.
